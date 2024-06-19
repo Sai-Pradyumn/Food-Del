@@ -15,4 +15,8 @@ export const assets ={
 }
 
 // export const url = 'http://localhost:4000'
+<<<<<<< HEAD
 export const url = 'https://food-del-backend-t3ck.onrender.com'
+=======
+export const url = 'https://food-del-backend-t3ck.onrender.com'
+>>>>>>> 75f5631c732437e6e4663bf06f6ec333b284ee3a
