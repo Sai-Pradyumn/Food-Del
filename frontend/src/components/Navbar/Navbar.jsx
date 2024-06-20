@@ -8,7 +8,8 @@ import { StoreContext } from '../../context/StoreContext';
 const Navbar = ({setShowLogin}) => {
 
   const [menu,setMenu] = useState("home");
-  const {getTotalCartAmount, token, setToken} = useContext(StoreContext)
+  const [isSearchVisible, setIsSearchVisible] = useState(false);
+  const {getTotalCartAmount, token, setToken, setSearchQuery} = useContext(StoreContext)
 
   const navigate = useNavigate();
 
@@ -18,10 +19,24 @@ const Navbar = ({setShowLogin}) => {
     navigate("/");
   }
 
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  }
+
+  const handleCancelSearch = () => {
+    setSearchQuery("");
+    setIsSearchVisible(false);
+  }
+
   return (
     <div className="nav">
       <div className='navbar'>
-          <Link to="/"><img src={assets.logo} alt="" className='logo'/></Link>
+          {/* <Link to="/"><img src={assets.logo} alt="" className='logo'/></Link> */}
+          <Link to="/" className='logo-container'>
+            <img src="/delishdrop_logo(1).png" className="logo" alt="" />
+            <img src="/logo2.png" className='logo-back' alt="" />
+          </Link>
+
           <ul className="navbar-menu">
 
               {/* <li onClick={() => setMenu("home")} className={menu === "home" ? "active" : ""}>home</li>
@@ -36,7 +51,27 @@ const Navbar = ({setShowLogin}) => {
 
           </ul>
           <div className="navbar-right">
-            <img src={assets.search_icon} alt="" />
+            {/* <img src={assets.search_icon} alt="" /> */}
+
+            {isSearchVisible ? (
+              <div className='search-input-container'>
+                <input 
+                  className='search-input'
+                  type="text" 
+                  placeholder="Search..." 
+                  onChange={handleSearchChange} 
+                />
+                <button className='cancel-btn' onClick={handleCancelSearch} >X</button>
+              </div>
+            ) : (
+              <img 
+                src={assets.search_icon} 
+                alt="" 
+                className="navbar-search-icon" 
+                onClick={() => setIsSearchVisible(true)} 
+              />
+            )}
+
             <div className="navbar-search-icon">
               <Link to="/cart"><img src={assets.basket_icon} alt="" /></Link>
               <div className={getTotalCartAmount() === 0 ? "" : "dot"}></div>

@@ -2,12 +2,15 @@
     height: 34vw;
     margin: 30px auto;
     /* margin-top: 8rem; */
-    background: url('/header_img.png') no-repeat;
-    background-size: contain;
+    /* background: url('/header_img.png') no-repeat; */
+    background: url('/bg4.jpg') no-repeat;
+    /* background: url('/bg3.jpg') no-repeat; */
+    background-size: cover;
     position: relative;
+    border-radius: 1vw;
 }
 
-.header::after{
+/* .header::after{
     content: '';
     position: absolute;
     height: 100%;
@@ -16,14 +19,14 @@
     opacity: .3;
     top: 0;
     border-radius: 1vw;
-}
+} */
 
 .header-contents{
     position: absolute;
     display: flex;
     flex-direction: column;
     align-items: start;
-    gap: 1.4vw;
+    gap: 2vw;
     max-width: 50%;
     bottom: 10%;
     left: 6vw;
@@ -36,6 +39,10 @@
 .header-contents h2{
     font-weight: 500;
     color: white;
+    /* color: #000; */
+    /* color: #d96755; */
+    /* color: #994c2e; */
+    /* color: #503426; */
     font-size: max(4.5vw,22px);
     /* opacity: 0; */
     /* animation: fadeIn 1s; */
@@ -43,6 +50,7 @@
 
 .header-contents p{
     color: white;
+    /* color: #503426c1; */
     font-size: 1.4vw;
     /* animation: fadeIn 1s 0.5s;
     animation-delay: 1s; */
@@ -58,9 +66,16 @@
     font-size: max(1vw,13px);
     border-radius: 50px;
     cursor: pointer;
+    transition: .3s;
     /* animation: fadeIn 1s 1s;
     animation-delay: 2s; */
     /* opacity: 0; */
+}
+
+.header-contents button:hover{
+    color: #000;
+    text-decoration: underline 2px tomato;
+    text-underline-offset: 3px;
 }
 
 

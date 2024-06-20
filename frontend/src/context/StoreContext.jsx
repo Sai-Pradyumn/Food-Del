@@ -14,6 +14,7 @@ const StoreContextProvider = (props) => {
     // const [token,setToken] = useState(localStorage.getItem('token') || '');
 
     const [food_list,setFoodList] = useState([]);
+    const [searchQuery, setSearchQuery] = useState("");
 
     // const addToCart = (itemId) => {
     const addToCart = async (itemId) => {   // for await (included async)
@@ -88,6 +89,8 @@ const StoreContextProvider = (props) => {
         url,
         token,
         setToken,
+        searchQuery,
+        setSearchQuery,
     }
     return(
         <StoreContext.Provider value={contextValue}>

@@ -33,8 +33,34 @@
     /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
 }
 
+.navbar .logo-container{
+    width: 124px;
+    border: 2px solid #000;
+    border-radius: 15px;
+    /* padding: 5px 0px; */
+    height: 60px;
+    background-color: transparent;
+    backdrop-filter: blur(40px);
+    position: relative;
+}
+
 .navbar .logo{
-    width: 150px;
+    /* background-size: cover; */
+    width: 100%;
+    object-fit: contain;
+    background-color: transparent;
+    backdrop-filter: blur(2px);
+    border-radius: 15px;
+}
+
+.navbar .logo-back{
+    position: absolute;
+    top: -80%;
+    transform: rotate(30deg);
+    left: 5%;
+    width: 90%;
+    /* height: 100%; */
+    z-index: -1;
 }
 
 .navbar-menu{
@@ -70,6 +96,7 @@
     display: flex;
     align-items: center;
     gap: 25px;
+    position: relative;
 }
 
 .navbar-right img{
@@ -111,6 +138,46 @@
 
 .navbar-search-icon{
     position: relative;
+    cursor: pointer;
+}
+
+.search-input-container{
+    display: flex;
+    background-color: #fff;
+    border: 1px solid tomato;
+    border-radius: 6px;
+    height: 40px;
+    width: 200px;
+    position: absolute;
+    top: 30px;
+    right: 50%;
+    padding: 5px;
+    padding-left: 10px;
+}
+
+.search-input-container .search-input{
+    width: 90%;
+    height: 100%;
+    border: none;
+    /* border: 1px solid #000; */
+    font-size: 16px;
+    outline: none;
+    /* padding: 3px; */
+    background-color: transparent;   
+}
+
+.search-input-container .cancel-btn{
+    background-color: transparent;
+    border: none;
+    border-left: #000;
+    border-radius: 4px;
+    font-size: 14px;
+    height: 100%;
+    width: 12%;
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .navbar-search-icon .dot{
